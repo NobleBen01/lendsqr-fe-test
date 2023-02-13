@@ -24,6 +24,7 @@ const users = () => {
     useEffect(() => {
         fetchData();
       }, []);
+
     
      return (
       <div>
@@ -115,16 +116,15 @@ const users = () => {
                     className=" border-0 text-black float-right"
                     onClick={() => setShowMenu(false)}
                   >
-                    <span className="text-black opacity-7 h-6 w-6 text-xl block bg-gray-400 py-0 rounded-full">
+                    <span className="text-black opacity-7 h-6 w-6 text-xl block py-0 text-re">
                       x
                     </span>
                   </button>
                 </div>
-                <div className="relative p-6 flex-auto">
-                {/* <Link className="home_button">View Menu</Link> */}
-                 <button> view details</button>
-                 <button> Blacklist User</button>
-                 <button> Activate User</button>                    
+                <div className="relative p-6 flex-auto text-center">
+                 <Link to='/userprofile' className='p-2 bg-green-20 border-l rounded text-white mx-12 my-2'> View details</Link> <br />
+                 <button className='p-2 bg-green-20 border-l rounded text-white mx-12 my-2'> Blacklist User</button> <br />
+                 <button className='p-2 bg-green-20 border-l rounded text-white mx-12 my-2'> Activate User</button> <br />
                 </div>
                
               </div>
@@ -137,7 +137,7 @@ const users = () => {
 
     {/* User Table*/}
         
-     <table className='px-6 py-8'>
+     <table className='px-6 py-10'>
        <thead>
          <tr className='text-sm'>
            <th> <button 
@@ -174,6 +174,7 @@ const users = () => {
            <th>   </th>
          </tr>   
        </thead>   
+       {/* <button className='p-2 bg-green-20 border-l rounded text-white'> view details</button> */}
        <tbody className="divide-y divide-gray-200">
          {
          user.map( (item) =>
@@ -184,7 +185,8 @@ const users = () => {
              <td className='table-data'>{item.phoneNumber}</td>
              <td className='table-data'>{item.createdAt}</td>
              <td className='table-data'>{item.createdAt}</td>
-             <td className='w-6'> <button
+             <td className='w-6'> 
+             <button
              onClick={() => setShowMenu(true)}>
              <FontAwesomeIcon icon={faEllipsisVertical}/>
                 </button></td>
@@ -195,7 +197,18 @@ const users = () => {
        }
        </tbody>
      </table>
-      </div>
+
+     {/* <div className="dropdown">
+  <button className="dropbtn">Dropdown</button>
+  <div id="myDropdown" className="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div> */}
+
+
+</div>
     );
 }
 

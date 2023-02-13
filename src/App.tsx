@@ -5,20 +5,26 @@ import Loginpage from './components/loginpage'
 import Users from './components/users'
 import Userprofile from './components/userprofile'
 import './styles/main.scss'
-import { UserCircleIcon } from '@heroicons/react/24/outline'
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
 
   return (
-    <>
-    {/* <div className='bg-white-20'>
-      <Navbar/>
-    </div>
-     <Sidebar /> */}
-     {/* <Loginpage/> */}
-     <Userprofile/>
-     </>
+    <Router>
+     <switch>
+     <Route exact path='/'>
+         <Loginpage/>
+      </Route>
+      <Route path='/user'>
+         <Navbar/>
+         <Sidebar/>
+      </Route>
+      <Route path='/userprofile'>
+         <Navbar/>
+         <Userprofile/>
+      </Route>
+     </switch>
+     </Router>
   )
 }
 

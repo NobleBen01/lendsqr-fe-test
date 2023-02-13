@@ -1,9 +1,10 @@
 import React, { useEffect, useState  } from "react"
 import Logo from '@/assets/logo.svg'
-import { BellIcon } from '@heroicons/react/24/outline'
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 import '@/styles/main.scss'
 import mediaQuery from "@/hooks/mediaQuery"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 // import Alarm from './../assets/alarm.svg'
 // import Avatar from './../assets/avatar.svg'
 
@@ -17,28 +18,31 @@ const Navbar = () => {
   return (
     <nav className=''>
       
-      <div className={`${flexBetween} fixed top-0 z-30 w-full py-4`}>
-        <div className={`${flexBetween} mx-auto w-4/6`}>
-          <div className={`${flexBetween} w-full gap-16`}>
-            {/* left side */}
-            <img src={Logo} alt="logo" />
+      <div className={`${flexBetween} fixed top-0 z-30 w-full py-4 bg-white px-5`}>
+
+
+          <img src={Logo} alt="logo" className="1/5"/>
 
             {/* right side */}
           {aboveMediumScreens ? (<div className={`${flexBetween} w-full`}>
-              <div className={`${flexBetween} gap-8 text-sm`}>                   
-                     <div className="flex border border-blue-50 rounded">
+             <div className={`${flexBetween} gap-8 text-sm 1/5 justify-start`}>                   
+                     <div className="flex rounded ml-20">
                          <input
                              type="text"
                              className="block w-full px-4 py-2 green-20 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                              placeholder="Search for anything"
                           />
                           <button className="px-4 text-white bg-green-20 border-l rounded ">
-                              Search
+                              <FontAwesomeIcon icon={faMagnifyingGlass}/>
                           </button>
                      </div>
               </div>
-              <div>
-                 <a href='/docs'>Docs</a>
+              <div className="3/5">
+                 <a href='/docs' className="pr-3">Docs</a>
+
+                 <span className="pr-3">Icon</span>
+
+                 <span className="pr-3">User</span>
               </div>
             </div>
             ):( <button 
@@ -49,8 +53,6 @@ const Navbar = () => {
               </button>         
             )}
           </div>          
-        </div>
-      </div>
      
     
     {/* Mobile Menu */}

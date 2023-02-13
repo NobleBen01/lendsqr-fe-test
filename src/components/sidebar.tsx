@@ -17,19 +17,19 @@ const sidebar = () => {
        setShowModal((showModal) => showModal = !showModal )
     }
         return (
-            <div className="flex font-sans pt-14 text-blue-50">
+            <div className="flex font-sans pt-16 text-blue-50">
                 <div className="flex flex-col p-3 bg-white shadow w-60">
                     <div className="space-y-3">
-                        <div className="flex items-center">
+                        <div className="flex items-center pl-2 pt-6">
                             <FontAwesomeIcon icon={faBriefcase} />
-                            <h6>Switch Organization</h6>
-                            <FontAwesomeIcon icon={faAngleDown} />
+                            <h6 className='pl-4'>Switch Organization</h6>
+                            <FontAwesomeIcon icon={faAngleDown} className="pl-2"/>
                         </div>
                         <div className="flex items-center p-1 space-x-3 rounded-md">
                             <FontAwesomeIcon icon={faHouseChimney} />
                             <h6>Dashboard</h6>
                         </div>
-                        <span className='pt-8'>CUSTOMERS</span>
+                        <div className='pt-4'>CUSTOMERS</div>
                         <div className="flex-1">
                             <ul className="pb-4 space-y-1 text-sm">
                                 <li className="rounded-sm">
@@ -109,7 +109,7 @@ const sidebar = () => {
 
 
 
-                                <span className='pt-8'>Businesses</span>
+                                <div className='pt-4'>BUSINESSES</div>
                                 <li className="rounded-sm">
                                     <a
                                         href="#"
@@ -194,7 +194,7 @@ const sidebar = () => {
 
 
 
-                                <span>SETTINGS</span>
+                                <div className='pt-4'>SETTINGS</div>
                                 <li className="rounded-sm">
                                     <a
                                         href="#"
@@ -227,10 +227,10 @@ const sidebar = () => {
                     </div>
                 </div>
                 
-                <div>
-                  <div className="container mx-auto mt-12 ml-4 text-blue-50">
+                <div className='p-8'>
+                  <div className="container  mt-12 ml-4 text-blue-50">
                       <div className='mx-auto'>
-                        <h1 >Users</h1>
+                        <h1 className='text-2xl mb-5'>Users</h1>
                       </div>
                       <div className="grid grid-cols-1 gap-6 mb-6 lg:grid-cols-4">
                         <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
@@ -271,7 +271,7 @@ const sidebar = () => {
                         </div>
                       </div>
                    </div>
-                   <div className="ml-4   w-full px-4 py-5 bg-white rounded-lg shadow text-sm">
+                   <div className="ml-4 w-full px-4 py-5 bg-white rounded-lg shadow text-sm">
                      <Users />
                    </div>
                 </div>
