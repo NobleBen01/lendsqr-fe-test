@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Logo from '@/assets/logo.svg'
 import Pablo from '@/assets/pablo-sign-in.svg'
 
 
 const loginpage = () => {
+    const [user, setUser] = useState([] as any[]);
+
+    const fetchData = () => {fetch("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
+        .then((response) => response.json())
+        .then((json) => {
+            console.log(json)
+            setUser(json.slice(0,10))
+        })
+    };
+
+    useEffect(() => {
+        fetchData();
+      }, [])
+
+
+
+
+    const email=useRef()
+    const password=useRef()
+    // const handleSubmit=()=> {
+    //     if(email.value== user.map(email) )
+    // }
     return (
         <div className='flex'>
             <div className="">

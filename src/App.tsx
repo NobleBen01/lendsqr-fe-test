@@ -3,6 +3,7 @@ import Navbar from '@/components/navbar'
 import Sidebar from './components/sidebar'
 import Loginpage from './components/loginpage'
 import Users from './components/users'
+import Userprofile from './components/userprofile'
 import './styles/main.scss'
 import { UserCircleIcon } from '@heroicons/react/24/outline'
 
@@ -15,7 +16,8 @@ function App() {
       <Navbar/>
     </div>
      <Sidebar /> */}
-     <Loginpage/>
+     {/* <Loginpage/> */}
+     <Userprofile/>
      </>
   )
 }
