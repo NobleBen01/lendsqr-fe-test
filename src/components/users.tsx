@@ -184,7 +184,7 @@ const users = () => {
              <td className='table-data'>{item.email}</td>
              <td className='table-data'>{item.phoneNumber}</td>
              <td className='table-data'>{item.createdAt}</td>
-             <td className='table-data'>{item.createdAt}</td>
+             <td className='table-data'>ACTIVE</td>
              <td className='w-6'> 
              <button
              onClick={() => setShowMenu(true)}>
